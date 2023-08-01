@@ -1,0 +1,22 @@
+---
+import Navigation from "../components/Navigation.astro";
+import { ILayoutProps } from "../types";
+
+const { title = "Astro" } = Astro.props as ILayoutProps;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Navigation />
+    <div class="w-[90%] mx-auto">
+      <slot />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+---
+import { IPost } from "../types";
+import Visible from "../components/Visible";
+import Layout from "../layouts/Layout.astro";
+import ProductCard from "../components/ProductCard";
+const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+const data: IPost[] = await res.json();
+---
+
+<Layout title="Products">
+  <h1 class="text-2xl">Posts</h1>
+  <div class="grid col-span-3">
+    {data.map((item) => <ProductCard client:load product={item} />)}
+  </div>
+  <Visible client:visible />
+</Layout>

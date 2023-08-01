@@ -1,0 +1,25 @@
+{
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/node": "^5.3.0",
+    "@astrojs/preact": "^2.2.1",
+    "@astrojs/react": "^2.2.1",
+    "@astrojs/tailwind": "^4.0.0",
+    "@types/react": "^18.2.18",
+    "@types/react-dom": "^18.2.7",
+    "astro": "^2.9.6",
+    "preact": "^10.16.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.3.3"
+  }
+}

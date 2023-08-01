@@ -1,0 +1,24 @@
+---
+import { ILink } from "../types";
+
+const links: ILink[] = [
+  { url: "/", title: "Home" },
+  { url: "/about", title: "About" },
+  { url: "/posts", title: "Posts" },
+];
+---
+
+<nav
+  class="flex h-[50px] mb-5 right-0 bg-gray-400 text-white px-4 items-center justify-between"
+>
+  <h1 class="text-lg font-bold">Brand</h1>
+  <ul class="flex gap-5 list-none">
+    {
+      links.map((item) => (
+        <li>
+          <a href={item.url}>{item.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

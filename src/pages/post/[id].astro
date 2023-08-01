@@ -1,0 +1,29 @@
+---
+import { IPost } from "../../types";
+import Layout from "../../layouts/Layout.astro";
+export async function getStaticPaths() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const data = (await res.json()) as IPost[];
+  return data.map((post) => ({
+    params: { id: post.id.toString() },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: IPost;
+}
+
+const { id } = Astro.params;
+const { post } = Astro.props;
+---
+
+<Layout title={`Post ${id}`}>
+  <div class="flex justify-center flex-col text-center">
+    <div class="flex justify-center">
+      <img src="https://picsum.photos/id/237/200/300" />
+    </div>
+    <h1 class="text-lg font-bold">{post.title}</h1>
+    <p class="py-6">{post.body}</p>
+  </div>
+</Layout>
